@@ -2,7 +2,9 @@
   "pages": [
     "pages/index/main",
     "pages/me/main",
-    "pages/orderList/main"
+    "pages/orderList/main",
+    "pages/citySelect/main",
+    "pages/search/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
