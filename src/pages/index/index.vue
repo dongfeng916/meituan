@@ -31,7 +31,24 @@
         <span class="z-padding-v-8-px z-font-size-12 z-color-333">{{idx.title}}</span>
       </div>
     </dl>
-    
+    <!-- 广告 -->
+    <dl class="ub-box ub-wrap z-margin-top-6-px z-padding-v-5-px" style="background:#fff">
+      <dd class="adv ub-flex-1 z-box-sizing-border ub-box ub-ver ub-col">
+        <span class="z-font-size-14 z-lineHeight-36" style="color:#55a40f">我们约吧</span>
+        <span class="z-font-size-12 z-color-666">恋人家人好朋友</span>
+        <img src="/static/images/index1.png" class="z-img-cover">
+      </dd>
+      <dd class="adv ub-flex-1 z-box-sizing-border z-padding-v-5-px ub-box ub-ver ub-col">
+        <span class="z-font-size-14 z-lineHeight-36" style="color:#ff3f0d">低价超值</span>
+        <span class="z-font-size-12 z-color-666">十元惠生活</span>
+        <img src="/static/images/index2.png" class="z-img-cover">
+      </dd>
+      <dd class="adv ub-flex-1 z-box-sizing-border z-padding-v-5-px ub-box ub-ver ub-col">
+        <span class="z-font-size-14 z-lineHeight-36" style="color:#f742a0">午后时光</span>
+        <span class="z-font-size-12 z-color-666">懒散下午茶</span>
+        <img src="/static/images/index3.png" class="z-img-cover">
+      </dd>
+    </dl>
   </div>
 </template>
 
@@ -88,6 +105,13 @@ export default {
   border-radius: 50%;
   color: #fff;
   font-size: 24px;
+}
+.adv{
+  border-right: 2px solid #eee
+}
+.adv img{
+  width: 50px;
+  height: 50px;
 }
 </style>
 
