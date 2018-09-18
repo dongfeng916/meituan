@@ -1,20 +1,20 @@
 <template>
   <div class="container ub-box ub-col">
-    <dl class="ub-box ub-ver z-padding-v-10-px" style="background:#fff">
-      <dd @click.stop="$openWin('/pages/citySelect/main')" class="z-padding-h-10-px ub-box ub-ver">
+    <div class="ub-box ub-ver z-padding-v-10-px" style="background:#fff">
+      <div @click.stop="$openWin('/pages/citySelect/main')" class="z-padding-h-10-px ub-box ub-ver">
         <span class="z-font-size-14 z-color-666 z-margin-right-3-px">{{curCity}}</span>
         <i class="iconfont icon-xiangxiazhankai z-color-666 z-font-size-16"></i>
-      </dd>
-      <dd class="ub-flex-1 ub-box ub-ver">
-        <div @click.stop="$openWin('/pages/search/main')" class="search ub-box ub-ver-v z-width-90-percent z-box-sizing-border">
+      </div>
+      <div class="ub-flex-1 ub-box ub-ver">
+        <div @click.stop="$openWin('/pages/search/main')" class="search ub-box ub-ver-v z-width-90-percent">
           <i class="iconfont icon-sousuo z-color-666 z-font-size-16"></i>
           <span class="z-font-size-14 z-color-999 z-margin-left-8-px">请输入商家名、品类或者商圈</span>
         </div>
-      </dd>
-    </dl>
+      </div>
+    </div>
 
-    <div class="ub-box ub-ver z-bg-color-fff">
       <!-- 轮播图 -->
+    <div class="z-bg-color-fff z-margin-v-5-px">
       <swiper class="swiper" :indicator-dots ="false" autoplay="true" interval="5000" :duration="500">
         <block v-for="(item,idx) in imgUrls" :key="idx" >
           <swiper-item>
@@ -25,12 +25,12 @@
     </div>
     
     <!-- 图标九宫格入口 -->
-    <dl class="ub-box ub-wrap z-padding-v-5-px" style="background:#fff">
-      <div class="icon-item ub-box ub-col ub-ver" :key="key" v-for="(idx,key) in iconMap">
-        <dd class="icon ub-box ub-ver iconfont" :class="key" :style="{background:idx.bk}"></dd>
-        <span class="z-padding-v-8-px z-font-size-12 z-color-333">{{idx.title}}</span>
+    <div class="ub-box ub-wrap z-margin-v-5-px" style="background:#fff">
+      <div class="icon-item  ub-box ub-col ub-ver" :key="key" v-for="(idx,key) in iconMap">
+        <div class="icon ub-box ub-ver iconfont" :class="key" :style="{background:idx.bk}"></div>
+        <div class="z-padding-v-8-px z-font-size-12 z-color-333">{{idx.title}}</div>
       </div>
-    </dl>
+    </div>
     <!-- 广告 -->
     <dl class="ub-box ub-wrap z-margin-top-6-px z-padding-v-5-px" style="background:#fff">
       <dd class="adv ub-flex-1 z-box-sizing-border ub-box ub-ver ub-col">
@@ -46,14 +46,25 @@
       <dd class="adv ub-flex-1 z-box-sizing-border z-padding-v-5-px ub-box ub-ver ub-col">
         <span class="z-font-size-14 z-lineHeight-36" style="color:#f742a0">午后时光</span>
         <span class="z-font-size-12 z-color-666">懒散下午茶</span>
-        <img src="/static/images/index3.png" class="z-img-cover">
+        <img src="/static/images/index3.png" class="z-img-contain">
       </dd>
     </dl>
+    <!-- 猜你喜欢，商品列表 -->
+    <div class="ub-box ub-col z-margin-top-6-px z-padding-all-8-px" style="background:#fff">
+      <p class="z-width-100-percent ub-box ub-ver" style="border-bottom:1px solid #eee">
+        <span class="z-font-size-12 z-color-888 z-lineHeight-36">-猜你喜欢-</span>
+      </p>
+      <Good v-for="(val,idx) in 7" :key="idx" :isLast="idx===6"></Good>
+    </div>
   </div>
 </template>
 
 <script>
+import Good from "@/components/Good";
 export default {
+  components: {
+    Good
+  },
   data() {
     return {
       curCity: "上海",
@@ -82,7 +93,7 @@ export default {
 <style scoped>
 .container {
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
   background: #e8e8e8;
 }
 .search {
@@ -93,7 +104,9 @@ export default {
 .swiper {
   height: 120px;
   width: calc(100% - 16px);
+  margin: auto;
 }
+
 .icon-item {
   width: 20%;
   padding: 10px 13px 0 13px;
@@ -106,12 +119,13 @@ export default {
   color: #fff;
   font-size: 24px;
 }
-.adv{
-  border-right: 2px solid #eee
+.adv {
+  border-right: 2px solid #eee;
 }
-.adv img{
+.adv img {
   width: 50px;
   height: 50px;
 }
+
 </style>
 
