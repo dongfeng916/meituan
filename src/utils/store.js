@@ -32,6 +32,9 @@ const store = new Vuex.Store({
         updateUser:(state,change) =>{
             change.gender = change.gender === 1 ? '男' : '女'
             state.userInfo = change
+        },
+        updateIsLogin:(state,change)=>{
+            state.isLogin = change
         }
     }
 })
